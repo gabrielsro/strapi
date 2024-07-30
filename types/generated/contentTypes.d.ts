@@ -801,7 +801,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    image: Attribute.Media;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     slug: Attribute.UID<'api::category.category', 'title'> & Attribute.Required;
     posts: Attribute.Relation<
       'api::category.category',
@@ -839,7 +839,7 @@ export interface ApiPostPost extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     content: Attribute.Blocks;
-    coverPicture: Attribute.Media;
+    coverPicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     slug: Attribute.UID<'api::post.post', 'title'> & Attribute.Required;
     categories: Attribute.Relation<
       'api::post.post',
