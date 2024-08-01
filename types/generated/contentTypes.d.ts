@@ -801,7 +801,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     slug: Attribute.UID<'api::category.category', 'title'> & Attribute.Required;
     posts: Attribute.Relation<
       'api::category.category',
